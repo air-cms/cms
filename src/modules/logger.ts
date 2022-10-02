@@ -24,7 +24,7 @@ function applyLogLevels() {
   Object.keys(logLevels).forEach((key) => {
     //check for each level if it is included (first charachter) in the environment variable for the log levels,
     //or default if undefied to "iwe", which will log: info(s), warn(s), error(s)
-    if ((env("LOG_LEVELS") || "iwe").includes(key[0])) {
+    if ((env("LOG_LEVELS") ?? "iwe").includes(key[0])) {
       //if log level is included enable it
       logLevels[key] = true;
     }
