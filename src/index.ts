@@ -12,7 +12,10 @@ import { logger } from "./modules/logger";
 
 //check if not in production setup
 if (env("NODE_ENV") !== "production") {
-  logger.log("debug", `Environment variables have been loaded in ${env("NODE_ENV")} environment.`)
+  logger.log(
+    "debug",
+    `Environment variables have been loaded in ${env("NODE_ENV")} environment.`,
+  );
 }
 
 //load all components of the application (AFTER the environment variables are loaded)
