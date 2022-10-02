@@ -1,0 +1,32 @@
+{
+  "name": "@air-cms/cms",
+  "version": "0.0.0",
+  "description": "A simple content management system for Blog sites.",
+  "main": "dist/index.js",
+  "repository": "https://github.com/air-cms/cms.git",
+  "author": "laurenz1606 <laurenz.rausche@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev:build": "yarn dev:clean && tsc",
+    "dev:clean": "rimraf ./dist",
+    "dev:start": "ts-node src/index.ts",
+    "dev:watch": "ts-node-dev --respawn src/index.ts",
+    "dev:reinstall": "rimraf yarn.lock && rimraf node_modules && yarn install"
+  },
+  "private": false,
+  "dependencies": {
+    "@laurenz1606/logger": "^3.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.7.23",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+  }
+}
