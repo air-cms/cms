@@ -38,8 +38,5 @@ applyLogLevels();
 export const logger = new Logger({
   //get format from env vars, default to "[%L] %m"
   format: env("LOGGER_FORMAT") || "[%L] %m",
-  debug: logLevels.debug,
-  info: logLevels.info,
-  warn: logLevels.warn,
-  error: logLevels.error,
+  ...logLevels
 });

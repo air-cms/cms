@@ -17,4 +17,3 @@ if (env("NODE_ENV") !== "production") {
 
 //load all components of the application (AFTER the environment variables are loaded)
 import "./components/express";
-
