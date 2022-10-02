@@ -1,9 +1,14 @@
+import cors from "cors";
 import express from "express";
 import { logger } from "../modules/logger";
 import { env } from "../utils/env";
 
 //create new express instance
 const app = express();
+
+//use cors on the express app
+//maybe add preflight?
+app.use(cors({ origin: env("CORS_ORIGIN") || "*" }));
 
 //check if port is defined
 if (env("APP_PORT")) {
