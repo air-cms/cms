@@ -8,6 +8,7 @@ A simple content management system for Blog sites.
 |APP_PORT|-|yes|The port of the air-cms (express) webserver.|
 |CORS_ORIGIN|`*`|no|The cors origin option.|
 |MONGO_URL|-|yes|The URL for the mongoDB (mongoose) connection.|
+|REDIS_URL|-|yes|The URL for the redis (ioredis) connection.|
 |LOGGER_FORMAT|`[%L] %m`|no|The format of the internal logger. More infos [here](https://github.com/air-cms/cms/blob/main/README.md#logger-format)|
 |LOG_LEVELS|`iwe`|no|The flags to activate diffrent log states, More infos [here](https://github.com/air-cms/cms/blob/main/README.md#logger-levels)|
 
