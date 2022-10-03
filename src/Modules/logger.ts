@@ -1,5 +1,5 @@
 import { Logger } from "@laurenz1606/logger";
-import { env } from "../utils/env";
+import { env } from "../Utils/env";
 
 //interface for all log levels
 interface LogLevels {

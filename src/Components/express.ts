@@ -1,8 +1,8 @@
 import cors from "cors";
 import express from "express";
-import { logger } from "../modules/logger";
-import { env } from "../utils/env";
-import { undefinedEnv } from "../utils/undefinedEnv";
+import { logger } from "../Modules/logger";
+import { env } from "../Utils/env";
+import { undefinedEnv } from "../Utils/undefinedEnv";
 
 //create new express instance
 const app = express();

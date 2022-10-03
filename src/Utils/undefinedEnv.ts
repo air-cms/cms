@@ -1,4 +1,4 @@
-import { logger } from "../modules/logger";
+import { logger } from "../Modules/logger";
 
 //exit process and log undefined env
 export function undefinedEnv(varName: string) {
