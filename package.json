@@ -10,7 +10,7 @@
     "dev:build": "yarn dev:clean && tsc",
     "dev:clean": "rimraf ./dist",
     "dev:start": "ts-node src/index.ts",
-    "dev:watch": "ts-node-dev --respawn src/index.ts",
+    "dev:watch": "ts-node-dev --respawn --clear --watch .env src/index.ts",
     "dev:reinstall": "rimraf yarn.lock && rimraf node_modules && yarn install"
   },
   "private": false,
@@ -19,6 +19,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
+    "ioredis": "^5.2.3",
     "mongoose": "^6.6.3",
     "uuid": "^9.0.0"
   },
