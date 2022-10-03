@@ -14,7 +14,7 @@ app.use(cors({ origin: env("CORS_ORIGIN") || "*" }));
 //check if port is defined
 if (!env("APP_PORT")) {
   //handle undefined APP_PORT
-  undefinedEnv("APP_PORT")
+  undefinedEnv("APP_PORT");
 }
 
 //listen on the APP_PORT

@@ -29,7 +29,10 @@ async function testConnection() {
     const test1 = await ConnectionTestModel.create({});
 
     //log successfull "create"
-    logger.log("debug", `MongoDB: "create" test successfull with "_id": ${test1._id}`);
+    logger.log(
+      "debug",
+      `MongoDB: "create" test successfull with "_id": ${test1._id}`,
+    );
 
     //get dummy object to test "find" (use "as" to cast to IConnectionTest)
     const test2 = (await ConnectionTestModel.findById(
@@ -37,13 +40,19 @@ async function testConnection() {
     )) as IConnectionTest;
 
     //log successfull "find"
-    logger.log("debug", `MongoDB: "find" test successfull with "_id": ${test2._id}`);
+    logger.log(
+      "debug",
+      `MongoDB: "find" test successfull with "_id": ${test2._id}`,
+    );
 
     //remove dummy object to test "delete"
     await ConnectionTestModel.deleteOne({ _id: test2._id });
 
     //log successfull "delete"
-    logger.log("debug", `MongoDB: "delete" test successfull with "_id": ${test2._id}`);
+    logger.log(
+      "debug",
+      `MongoDB: "delete" test successfull with "_id": ${test2._id}`,
+    );
   } catch (err) {
     //log all errors that could occur
     logger.log("error", String(err));

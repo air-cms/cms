@@ -15,29 +15,38 @@ export const redisClient = new Redis(env("REDIS_URL") as string);
 //listen to the connect event
 redisClient.connect(() => {
   logger.log("info", `Redis connection established`);
-  testConnection()
+  testConnection();
 });
 
 //test connection to redis database
 async function testConnection() {
   try {
     //make dummy object to test "set"
-    const test1 = await redisClient.set("redisTest", "test")
+    const test1 = await redisClient.set("redisTest", "test");
 
     //log successfull "set"
-    logger.log("debug", `Redis: "set" test successfull: key = "redisTest"; value = "test" (Code: ${test1})`);
+    logger.log(
+      "debug",
+      `Redis: "set" test successfull: key = "redisTest"; value = "test" (Code: ${test1})`,
+    );
 
     //find dummy object to test "get"
-    const test2 = await redisClient.get("redisTest")
+    const test2 = await redisClient.get("redisTest");
 
     //log successfull "get"
-    logger.log("debug", `Redis: "get" test successfull: key = "redisTest"; value = "${test2}"`);
+    logger.log(
+      "debug",
+      `Redis: "get" test successfull: key = "redisTest"; value = "${test2}"`,
+    );
 
     //remove dummy object to test "del"
-    const test3 = await redisClient.del("redisTest")
+    const test3 = await redisClient.del("redisTest");
 
     //log successfull "del"
-    logger.log("debug", `Redis: "del" test successfull: key = "redisTest"; value = "test" (Code: ${test3})`);
+    logger.log(
+      "debug",
+      `Redis: "del" test successfull: key = "redisTest"; value = "test" (Code: ${test3})`,
+    );
   } catch (err) {
     //log all errors that could occur
     logger.log("error", String(err));
