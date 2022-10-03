@@ -10,7 +10,7 @@
     "dev:build": "yarn dev:clean && tsc",
     "dev:clean": "rimraf ./dist",
     "dev:start": "ts-node src/index.ts",
-    "dev:watch": "ts-node-dev --respawn src/index.ts",
+    "dev:watch": "ts-node-dev --respawn --clear --watch .env src/index.ts",
     "dev:reinstall": "rimraf yarn.lock && rimraf node_modules && yarn install"
   },
   "private": false,
