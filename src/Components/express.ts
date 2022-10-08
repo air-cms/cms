@@ -6,6 +6,7 @@ import { undefinedEnv } from "../Utils/undefinedEnv";
 
 //create new express instance
 const app = express();
+app.use(express.json())
 
 //use cors on the express app
 //maybe add preflight?
