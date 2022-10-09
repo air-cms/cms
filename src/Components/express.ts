@@ -1,16 +1,27 @@
 import cors from "cors";
 import express from "express";
 import { logger } from "../Modules/logger";
+import { ContentRouter } from "../Routers/ContentRouter";
+import { DebugRouter } from "../Routers/DebugRouter";
 import { env } from "../Utils/env";
 import { undefinedEnv } from "../Utils/undefinedEnv";
 
 //create new express instance
-const app = express();
-app.use(express.json())
+export const ExpressApp = express();
+ExpressApp.use(express.json());
 
 //use cors on the express app
-//maybe add preflight?
-app.use(cors({ origin: env("CORS_ORIGIN") || "*" }));
+//TODO: maybe add preflight?
+ExpressApp.use(cors({ origin: env("CORS_ORIGIN") || "*" }));
+
+//include routers
+ExpressApp.use("/content", ContentRouter);
+
+//include special debug router only when debug mode is enabled
+if (env("DEBUG_MODE")) {
+  //load debug router
+  ExpressApp.use("/debug", DebugRouter);
+}
 
 //check if port is defined
 if (!env("APP_PORT")) {
@@ -19,7 +30,7 @@ if (!env("APP_PORT")) {
 }
 
 //listen on the APP_PORT
-app.listen(env("APP_PORT"), () => {
+ExpressApp.listen(env("APP_PORT"), () => {
   //log info message with port
   logger.log(
     "info",
