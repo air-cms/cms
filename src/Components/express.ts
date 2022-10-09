@@ -21,6 +21,9 @@ ExpressApp.use("/content", ContentRouter);
 if (env("DEBUG_MODE")) {
   //load debug router
   ExpressApp.use("/debug", DebugRouter);
+
+  //log that debug mode is enabled
+  logger.log("info", "Debug mode is enabled")
 }
 
 //check if port is defined
