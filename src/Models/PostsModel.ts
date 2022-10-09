@@ -4,6 +4,8 @@ import { marked } from "marked";
 import { model, Schema } from "mongoose";
 import slugify from "slugify";
 import { v4 } from "uuid";
+
+//create DOMPurify instance with JSDOM window
 const dompurify = DOMPurify(new JSDOM("").window as any);
 
 //the interface for a posts
