@@ -15,6 +15,7 @@
   },
   "private": false,
   "dependencies": {
+    "@authfunctions/express": "^3.2.8",
     "@laurenz1606/logger": "^3.1.2",
     "cors": "^2.8.5",
     "dompurify": "^2.4.0",

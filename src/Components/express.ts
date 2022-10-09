@@ -1,5 +1,6 @@
 import cors from "cors";
 import express from "express";
+import { auth } from "../Modules/auth";
 import { logger } from "../Modules/logger";
 import { ContentRouter } from "../Routers/ContentRouter";
 import { DebugRouter } from "../Routers/DebugRouter";
@@ -16,6 +17,7 @@ ExpressApp.use(cors({ origin: env("CORS_ORIGIN") || "*" }));
 
 //include routers
 ExpressApp.use("/content", ContentRouter);
+ExpressApp.use("/auth", auth.Router)
 
 //include special debug router only when debug mode is enabled
 if (env("DEBUG_MODE")) {
@@ -26,7 +28,7 @@ if (env("DEBUG_MODE")) {
   logger.log("info", "Debug mode is enabled")
 }
 
-//check if port is defined
+//check if APP_PORT is defined
 if (!env("APP_PORT")) {
   //handle undefined APP_PORT
   undefinedEnv("APP_PORT");
