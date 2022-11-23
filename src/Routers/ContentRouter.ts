@@ -1,6 +1,14 @@
-import { Router } from "express"
+import { Router } from "express";
+import { PostsModel } from "../Models/PostsModel";
 
 //the content router
-export const ContentRouter = Router()
+export const ContentRouter = Router();
 
-//the content methods here
+//get all posts
+ContentRouter.get("/posts", async (req, res) => {
+
+});
+
+async function getPost(id: string) {
+
+}
